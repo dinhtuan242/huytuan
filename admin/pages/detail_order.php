@@ -35,6 +35,10 @@
                 ?>
                 <ul class="list-item">
                     <li>
+                        <h3 class="title">Tên khách hàng</h3>
+                        <span class="detail"><?php echo $row["tenkhachhang"];?></span>
+                    </li>
+                    <li>
                         <h3 class="title">Mã đơn hàng</h3>
                         <span class="detail"><?php echo $row["id"];?></span>
                     </li>
@@ -103,9 +107,9 @@
                                     </div>
                                 </td>
                                 <td class="thead-text"><?php echo $row2["name"];?></td>
-                                <td class="thead-text"><?php echo number_format($row2["price"]);?> VNĐ</td>
+                                <td class="thead-text"><?php echo number_format($row2["sale"]);?> VNĐ</td>
                                 <td class="thead-text"><?php $tongsoluong+=$row1["soluong"]; echo $row1["soluong"];?></td>
-                                <td class="thead-text"><?php echo(number_format($row2["price"]*$row1["soluong"])) ?> VNĐ</td>
+                                <td class="thead-text"><?php echo(number_format($row2["sale"]*$row1["soluong"])) ?> VNĐ</td>
                             </tr>
                         <?php }} ?>
                         </tbody>

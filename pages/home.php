@@ -45,7 +45,7 @@
                       // $cat = $_GET['id'];
                     
                     include("config/dbconfig.php");
-                    $sql = "SELECT * from tbl_product where category order by id desc limit 8";
+                    $sql = "SELECT * from tbl_product order by id desc limit 8";
                     $run = mysqli_query($conn, $sql);
                     $i = 0;
                     while ($row = mysqli_fetch_array($run)) {
@@ -70,30 +70,25 @@
             </div>
         </div>
     </div>
+<?php
+  include("config/dbconfig.php");
+  $cat = "SELECT * from tbl_category order by id desc";
+  $runcat = mysqli_query($conn, $cat);
+  $c = 0;
+  while ($rowcat = mysqli_fetch_array($runcat)) {
+    $category =$rowcat['id'];
+    $c++;
+;?>
     <div class="section" id="list-product-wp">
         <div class="wp-inner">
             <div class="section-head clearfix">
-                <?php
-                  // $cat = $_GET['id'];
-                
-                include("config/dbconfig.php");
-                $sql = "SELECT * from tbl_category where id = 7 limit 8";
-                $run = mysqli_query($conn, $sql);
-                $i = 0;
-                while ($row = mysqli_fetch_array($run)) {
-                    $i++;
-                    ;?>           
-                    <h3 class="section-title fl-left"><?php echo $row['title']?></h3>
-                <?php } ?>
-                <!-- <a href="" title="" class="see-more fl-right">Xem thêm</a> -->
+            <h3 class="section-title fl-left"><?php echo $rowcat['title']?></h3>
             </div>
             <div class="section-detail">
                 <ul class="list-item clearfix">
                     <?php
-                      // $cat = $_GET['id'];
-                    
                     include("config/dbconfig.php");
-                    $sql = "SELECT * from tbl_product where category = 7 order by id desc limit 8";
+                    $sql = "SELECT * from tbl_product where category = '$category' order by id asc limit 8";
                     $run = mysqli_query($conn, $sql);
                     $i = 0;
                     while ($row = mysqli_fetch_array($run)) {
@@ -114,60 +109,14 @@
                         </li>
                     <?php } ?>
                 </ul>
+
             </div>
         </div>
-    </div>
-    <div class="section" id="list-product-wp">
-        <div class="wp-inner">
-            <div class="section-head clearfix">
-                <?php
-                  // $cat = $_GET['id'];
-                
-                include("config/dbconfig.php");
-                $sql = "SELECT * from tbl_category where id = 8";
-                $run = mysqli_query($conn, $sql);
-                $i = 0;
-                while ($row = mysqli_fetch_array($run)) {
-                    $i++;
-                    ;?>           
-                    <h3 class="section-title fl-left"><?php echo $row['title']?></h3>
-                <?php } ?>
-                <!-- <a href="" title="" class="see-more fl-right">Xem thêm</a> -->
-            </div>
-            <div class="section-detail">
-                <ul class="list-item clearfix">
-                    <?php
-                      // $cat = $_GET['id'];
-                    
-                    include("config/dbconfig.php");
-                    $sql= "SELECT * from tbl_product where category = 8 order by id desc limit 8";
-                    $run = mysqli_query($conn,$sql);
-                    $i = 0; 
-                    while ($row = mysqli_fetch_array($run)) {
-                        $i++;
-                        ;?>
-                        <li>
-                            <a href="?page=detail_product&id=<?php echo $row['id'] ?>" title="" class="thumb">
-                                <img src="index.php/../images/product/<?php echo $row['image']?>" alt="">
-                            </a>
-                            <div class="info">
-                                <a href="?page=detail_product&id=<?php echo $row['id'] ?>" title="" class="name-product"><?php echo $row['name']?></a>
-                                <div class="price-wp">
-                                    <span class="new"><?php echo number_format($row['sale']); ?></span>
-                                    <span class="old"><?php echo number_format($row['price']); ?></span>
-                                </div>
-                                <a href="?page=add_cart&id=<?php echo $row['id'] ?>" title="" class="buy-now">Mua ngay</a>
-                            </div>
-                        </li>
-                    <?php } ?>
-                </ul>
-            </div>
-        </div>
-    </div>
+    </div><?php } ?>
     <div class="section" id="blog-wp">
         <div class="wp-inner">
             <div class="section-head">
-                <h3 class="section-title">Xu hướng</h3>
+                <h3 class="section-title">Thông tin</h3>
             </div>
             <div class="section-detail">
                 <div id="blog-list">
@@ -186,7 +135,7 @@
                                 <img src="index.php/../images/post/<?php echo $row['image'] ?>" alt="">
                             </a>
                             <a href="?page=detail_news&id=<?php echo $row['id']; ?>" title="" class="title"><?php echo $row['title'] ?></a>
-                            <p class="desc">Lorem Ipsum chỉ đơn giản là một đoạn văn bản giả, được dùng vào việc trình bày và dàn trang phục vụ cho in ấn. Lorem Ipsum đã được sử dụng như một văn bản chuẩn cho ngành công nghiệp in ấn từ những năm 1500</p>
+                            <p class="desc"><?php echo $row['mota']; ?></p>
                         </li>
                         <?php } ?>
                     </ul>
@@ -194,18 +143,5 @@
             </div>
         </div>
     </div>
-    <div class="section" id="promotion-wp">
-        <div class="wp-inner">
-            <div class="section-head">
-                <h3 class="section-title">Đăng ký để nhận khuyến mại</h3>
-                <p class="section-desc">Đăng ký để nhận được thông tin khuyến mại mới nhất</p>
-            </div>
-            <div class="section-detail">
-                <form method="POST">
-                    <input type="email" name="email" id="email" placeholder="Nhập email của bạn">
-                    <input type="submit" value="Đăng ký">
-                </form>
-            </div>
-        </div>
-    </div>
+    <div style="margin-top: 30px;"></div>
 </div>

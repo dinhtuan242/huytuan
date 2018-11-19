@@ -62,7 +62,7 @@
                             <td>
                                 <a href="?page=detail_product&id=<?php echo $row["id"];?>" title="" class="name-product"><?php echo $row['name']?></a>
                             </td>
-                            <td><?php echo number_format($row['price'])?></td>
+                            <td><?php echo number_format($row['sale'])?></td>
                             <td>
                                 
                                 <select onchange="numberChanged(this)" style="width: 50px; height: 50px;" class="num-order" data-idproduct="<?php echo $row['id']; ?>">
@@ -80,7 +80,7 @@
                                 </select>
                             </td>
                             <td><?php 
-                            $thanhtien = $soluong*$row['price'];
+                            $thanhtien = $soluong*$row['sale'];
                             echo number_format($thanhtien); 
                             $tongtien += $thanhtien;
                             ?></td>

@@ -1,3 +1,4 @@
+<?php $tongtien = 0; ?>
 <div id="main-content-wp" class="checkout-page">
     <div class="section" id="breadcrumb-wp">
         <div class="wp-inner">
@@ -62,7 +63,6 @@
                         </tr>
                     </thead><?php 
                                     include("config/dbconfig.php");
-                                    $tongtien = 0;
                                     foreach ($_SESSION['cart'] as $idproduct=>$soluong) {
                                     $sql = "SELECT * from tbl_product where id=".$idproduct;
                                     $run = mysqli_query($conn, $sql);
@@ -73,7 +73,7 @@
                     <tbody>
                         <tr class="cart-item">
                             <td class="product-name"><?php echo $row['name']?><strong class="product-quantity">x <?php echo $soluong; ?></strong></td>
-                            <td class="product-total"><?php $thanhtien = $soluong*$row['price'];
+                            <td class="product-total"><?php $thanhtien = $soluong*$row['sale'];
                             echo number_format($thanhtien);$tongtien += $thanhtien;?></td>
                         </tr>
                     </tbody><?php } }?>
