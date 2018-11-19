@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -63,7 +64,7 @@
                                 </ul>
                             </li>
                             <li>
-                                <a href="" title="">Bán hàng</a>
+                                <a href="?page=list_order" title="">Bán hàng</a>
                                 <ul class="sub-menu">
                                     <li>
                                         <a href="?page=list_order" title="">Danh sách đơn hàng</a> 
@@ -88,22 +89,17 @@
                                     <img src="public/images/img-admin.png">
                                 </div>
                                 <?php
-                                      // Bước 1: Kết nối đến CSDL
                                     include("../config/dbconfig.php");
-                                    mysqli_set_charset($conn, 'UTF8');
-                                      //Bước 2: Hiển thị các dữ liệu trong bảng ra đây
-                                    $sql = "SELECT * from tbl_user where username = username";
+                                    $email = $_SESSION['email'];
+                                    $sql = "SELECT * from tbl_user where email = '$email'";
                                     $run = mysqli_query($conn, $sql);
-                                    $i = 0;
-                                    while ($row = mysqli_fetch_array($run)) {
-                                        $i++;
+                                    $row = mysqli_fetch_array($run);
                                 ;?>
                                 <h3 id="account" class="fl-right">Xin chào, <?php echo $row["username"];?></h3>
-                            <?php } ?>
                             </button>
                             <ul class="dropdown-menu">
                                 <li><a href="?page=info_account" title="Thông tin cá nhân">Thông tin tài khoản</a></li>
-                                <li><a href="http://localhost:3408/huytuan/admin/?page=login" title="Thoát">Thoát</a></li>
+                                <li><a href="?page=login" title="Thoát">Thoát</a></li>
                             </ul>
                         </div>
                     </div>

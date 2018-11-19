@@ -23,10 +23,10 @@
                         <div id="uploadFile">
                             <input type="file" name="image" id="upload-thumb">
                         </div>
-                         <label for="active">Thực Hiện</label>
+                         <label for="active">Hiển thị</label>
                         <select name="active" id="active">
-                            <option value="0">0</option>
-                            <option value="1">1</option>
+                            <option value="0">Không</option>
+                            <option value="1">Có</option>
                         </select>
                         <button type="submit" name="btn-submit" id="btn-submit">Thêm mới</button>
                     </form>

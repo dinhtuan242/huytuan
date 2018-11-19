@@ -29,7 +29,7 @@
 		if($image==NULL) {		
 			$sql = "UPDATE tbl_product SET name = '$name', price = '$price', category = '$category', sale = '$sale', chitiet = '$chitiet', mota = '$mota'  WHERE id = '$id'";
 		} else { 
-			$sql = "UPDATE tbl_product SET name = '$name', price = '$price', category = '$category', image = '$image', sale = '$sale' WHERE id = '$id'";
+			$sql = "UPDATE tbl_product SET name = '$name', price = '$price', category = '$category', image = '$image', sale = '$sale', chitiet = '$chitiet', mota = '$mota' WHERE id = '$id'";
 		}
 	}
 	// Cho thực thi câu lệnh SQL trên

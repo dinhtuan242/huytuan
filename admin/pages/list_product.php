@@ -12,50 +12,35 @@
                 <div class="section-detail">
                     <div class="filter-wp clearfix">
                         <ul class="post-status fl-left">
-                            <li class="all"><a href="">Tất cả <span class="count">(69)</span></a> |</li>
-                            <li class="publish"><a href="">Đã đăng <span class="count">(51)</span></a> |</li>
-                            <li class="pending"><a href="">Chờ xét duyệt<span class="count">(0)</span></a></li>
-                            <li class="pending"><a href="">Thùng rác<span class="count">(0)</span></a></li>
+                            <li class="all">Tất cả <span class="count">(
+                                <?php echo mysqli_num_rows(mysqli_query($conn, "select * from tbl_product")); ?>
+                            )</span> sản phẩm
                         </ul>
                         <form method="POST" action="" class="form-s fl-right">
                             <input type="text" name="s" id="s">
                             <input type="submit" name="sm_s" value="Tìm kiếm">
                         </form>
                     </div>
-                    <div class="actions">
-                        <form method="GET" action="" class="form-actions">
-                            <select name="actions">
-                                <option value="0">Tác vụ</option>
-                                <option value="1">Công khai</option>
-                                <option value="1">Chờ duyệt</option>
-                                <option value="2">Bỏ vào thủng rác</option>
-                            </select>
-                            <input type="submit" name="sm_action" value="Áp dụng">
-                        </form>
-                    </div>
-
                                 <?php
-            if(isset($_GET['trang'])){
-                $get_trang = $_GET['trang'];
-            }
-            else{
-                $get_trang = '';
-            }
-            if ($get_trang == '' || $get_trang == 1){
-                $trang = 0;
-            }
-            else
-            {
-                $trang = ($get_trang*8)-8;
-            }
+                                if(isset($_GET['trang'])){
+                                    $get_trang = $_GET['trang'];
+                                }
+                                else{
+                                    $get_trang = '';
+                                }
+                                if ($get_trang == '' || $get_trang == 1){
+                                    $trang = 0;
+                                }
+                                else
+                                {
+                                    $trang = ($get_trang*8)-8;
+                                }
 
-
-            ?>
+                                ?>
                     <div class="table-responsive">
                         <table class="table list-table-wp">
                             <thead>
                                 <tr>
-                                    <td><input type="checkbox" name="checkAll" id="checkAll"></td>
                                     <td><span class="thead-text">STT</span></td>
                                     <td><span class="thead-text">ID</span></td>
                                     <td><span class="thead-text">Mã sản phẩm</span></td>
@@ -89,7 +74,6 @@
                                   ;?>
 
                                 <tr>
-                                    <td><input type="checkbox" name="checkItem" class="checkItem"></td>
                                     <th scope="row"><?php echo $i;?></th>
                                     <td><span class="tbody-text"><?php echo $row["id"];?></h3></span>
                                     <td><span class="tbody-text"><?php echo $row["masp"];?></h3></span>
@@ -126,7 +110,6 @@
                             </tbody>
                             <thead>
                                 <tr>
-                                    <td><input type="checkbox" name="checkAll" id="checkAll"></td>
                                     <td><span class="thead-text">STT</span></td>
                                     <td><span class="thead-text">ID</span></td>
                                     <td><span class="thead-text">Mã sản phẩm</span></td>
@@ -143,7 +126,6 @@
             </div>
             <div class="section" id="paging-wp">
                 <div class="section-detail clearfix">
-                    <p id="desc" class="fl-left">Chọn vào checkbox để lựa chọn tất cả</p>
                     <ul id="list-paging" class="fl-right">
                         <li>
                             <a href="" title=""><</a>

@@ -6,7 +6,7 @@
         <title>VIETSOZSHOP V1</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link type="image/x-icon" rel="shortcut icon" href="public/images/favicon.ico"/>
+        <link type="image/x-icon" rel="shortcut icon" href="images/favicon1.png"/>
         <link href="public/css/bootstrap/bootstrap-theme.min.css" rel="stylesheet" type="text/css"/>
         <link href="public/css/bootstrap/bootstrap.min.css" rel="stylesheet" type="text/css"/>
         <link href="public/css/carousel/owl.carousel.css" rel="stylesheet" type="text/css"/>

@@ -42,18 +42,6 @@
         <div class="wp-inner">
             <div class="section-detail">
                 <ul class="list-item clearfix">
-                    <!-- <li>
-                        <form method="POST" action="">
-                            <select name="filter-price">
-                                <option value="0">Lọc theo giá</option>
-                                <option value="0">500.000đ - 2.000.000đ</option>
-                                <option value="0">2.000.000đ - 5.000.000đ</option>
-                                <option value="0">5.000.000đ - 10.000.000đ</option>
-                                <option value="0">Trên 10.000.000đ</option>
-                            </select>
-                            <button type="submit" name="btn-filter-price" id="btn-filter-price">Lọc</button>
-                        </form>
-                    </li> -->
                     <li>
                         <form method="POST" action="" id="form-s-product">
                             <input type="text" name="s-product" id="s-product" placeholder="Tìm kiếm">
@@ -109,7 +97,7 @@
                         <div class="info">
                             <a href="" title="" class="name-product"><?php echo $row['name']?></a>
                             <div class="price-wp">
-                                <span class="new"><?php echo $row['price']?></span>
+                                <span class="new"><?php echo $row['sale']?></span>
                                 <span class="old"><?php echo $row['price']?></span>
                             </div>
                             <a href="?page=add_cart&id=<?php echo $row['id'] ?>" title="" class="buy-now">Mua ngay</a>
@@ -136,7 +124,7 @@
                 echo '';
             
             for($b=1;$b<=$sotrang;$b++){
-                echo '<a href="?page=category_product&id='.$id = $_GET['id'].'&trang='.$b.'" style="text-decoration:none">'.''.$b.''.'</a>';
+                echo '<a href="?page=category_product&id='.$id = $_GET['id'].'&trang='.$b.'" style="text-decoration:none">'.''.$b.''.'</a>&ensp;';
             }}
             ?>           
             </div>

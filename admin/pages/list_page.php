@@ -12,10 +12,9 @@
                 <div class="section-detail">
                     <div class="filter-wp clearfix">
                         <ul class="post-status fl-left">
-                            <li class="all"><a href="">Tất cả <span class="count">(10)</span></a> |</li>
-                            <li class="publish"><a href="">Đã đăng <span class="count">(5)</span></a> |</li>
-                            <li class="pending"><a href="">Chờ xét duyệt <span class="count">(5)</span></a></li>
-                            <li class="trash"><a href="">Thùng rác <span class="count">(0)</span></a></li>
+                            <li class="all">Tất cả <span class="count">(
+                                <?php echo mysqli_num_rows(mysqli_query($conn, "select * from tbl_page")); ?>
+                            )</span> trang
                         </ul>
                         <form method="POST" action="" class="form-s fl-right">
                             <input type="text" name="s" id="s">
@@ -53,7 +52,6 @@
                         <table class="table list-table-wp">
                             <thead>
                                 <tr>
-                                    <td><input type="checkbox" name="checkAll" id="checkAll"></td>
                                     <td><span class="thead-text">STT</span></td>
                                     <td><span class="thead-text">ID</span></td>
                                     <td><span class="thead-text">Tiêu đề</span></td>
@@ -77,7 +75,6 @@
                                   $i++;
                                   ;?>
                                 <tr>
-                                    <td><input type="checkbox" name="checkItem" class="checkItem"></td>
                                     <th scope="row"><?php echo $i;?></th>
                                     <td><span class="tbody-text"><?php echo $row["id"];?></h3></span>
                                     <td class="clearfix">
@@ -94,8 +91,7 @@
                             <?php } ?>
                             </tbody>
                             <thead>
-                                <tr>
-                                    <td><input type="checkbox" name="checkAll" id="checkAll"></td>
+                                <tr style="font-weight: bold;">
                                     <td><span class="thead-text">STT</span></td>
                                     <td><span class="thead-text">ID</span></td>
                                     <td><span class="thead-text">Tiêu đề</span></td>

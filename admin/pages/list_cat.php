@@ -23,7 +23,6 @@
                         <table class="table list-table-wp">
                             <thead>
                                 <tr>
-                                    <td><input type="checkbox" name="checkAll" id="checkAll"></td>
                                     <td><span class="thead-text">STT</span></td>
                                     <td><span class="thead-text">ID</span></td>
                                     <td><span class="thead-text">Tên danh mục</span></td>
@@ -69,7 +68,6 @@
                                   $i++;
                                   ;?>
                                   <tr>
-                                    <td><input type="checkbox" name="checkItem" class="checkItem"></td>
                                     <th scope="row"><?php echo $i;?></th>
                                     <td><span class="tbody-text"><?php echo $row["id"];?></h3></span>
                                         <td class="clearfix">
@@ -89,7 +87,6 @@
                             </tbody>
                             <thead>
                                 <tr>
-                                    <td><input type="checkbox" name="checkAll" id="checkAll"></td>
                                     <td><span class="thead-text">STT</span></td>
                                     <td><span class="thead-text">ID</span></td>
                                     <td><span class="thead-text">Tên danh mục</span></td>
@@ -103,7 +100,6 @@
             
             <div class="section" id="paging-wp">
                 <div class="section-detail clearfix">
-                    <p id="desc" class="fl-left">Chọn vào checkbox để lựa chọn tất cả</p>
                     <ul id="list-paging" class="fl-right">
                         <li>
                             <a href="" title=""><</a>

@@ -19,16 +19,10 @@
 
 	<div class="w3layoutscontaineragileits">
 	<h2>Login here</h2>
-		<form action="pages/login_perform.php" method="post">
-			<input type="email" Name="email" placeholder="EMAIL" required="">
-			<input type="password" Name="password" placeholder="PASSWORD" required="">
-			<ul class="agileinfotickwthree">
-				<li>
-					<input type="checkbox" id="brand1" value="">
-					<label for="brand1"><span></span>Remember me</label>
-					<a href="#">Forgot password?</a>
-				</li>
-			</ul>
+		<form action="pages/login_perform.php" method="POST">
+			<input type="email" name="email" placeholder="EMAIL" required="">
+			<input type="password" name="password" placeholder="PASSWORD" required="">
+			
 			<div class="aitssendbuttonw3ls">
 				<input type="submit" value="LOGIN">
 				<div class="clear"></div>

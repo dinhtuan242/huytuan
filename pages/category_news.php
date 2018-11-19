@@ -80,66 +80,24 @@
                 </div>
                 <div class="section-detail">
                     <ul class="list-item">
+                        <?php 
+                            include("config/dbconfig.php");
+                            $sql1 = "SELECT * from tbl_product limit 6";
+                            $run1 = mysqli_query($conn, $sql1);
+                            $i = 0;
+                            while ($row1 = mysqli_fetch_array($run1)) {
+                            $i++;
+                            ;?>
                         <li class="clearfix">
-                            <a href="?page=detail_product" title="" class="thumb fl-left">
-                                <img src="public/images/img-product-01.png" alt="">
+                            <a href="?page=detail_product&id=<?php echo $row1['id'];?>" title="" class="thumb fl-left">
+                                <img src="index.php/../images/product/<?php echo $row1['image']?>" alt="">
                             </a>
                             <div class="info fl-right">
-                                <a href="?page=detail_product" title="" class="product-name">101 cách dạy con thành tài</a>
-                                <span class="fee">250.000đ</span>
-                                <a href="?page=detail_product" title="" class="more">Xem chi tiết</a>
+                                <a href="?page=detail_product&id=<?php echo $row1['id'];?>" title="" class="product-name"><?php echo $row1['name']?></a>
+                                <span class="fee"><?php echo number_format($row1['sale']); ?> đ</span>
+                                <a href="?page=detail_product&id=<?php echo $row1['id'];?>" title="" class="more">Xem chi tiết</a>
                             </div>
-                        </li>
-                        <li class="clearfix">
-                            <a href="?page=detail_product" title="" class="thumb fl-left">
-                                <img src="public/images/img-product-02.png" alt="">
-                            </a>
-                            <div class="info fl-right">
-                                <a href="?page=detail_product" title="" class="product-name">Trâm Bầu</a>
-                                <span class="fee">250.000đ</span>
-                                <a href="?page=detail_product" title="" class="more">Xem chi tiết</a>
-                            </div>
-                        </li>
-                        <li class="clearfix">
-                            <a href="?page=detail_product" title="" class="thumb fl-left">
-                                <img src="public/images/img-product-03.png" alt="">
-                            </a>
-                            <div class="info fl-right">
-                                <a href="?page=detail_product" title="" class="product-name">Quản lý dự án xây dựng</a>
-                                <span class="fee">250.000đ</span>
-                                <a href="?page=detail_product" title="" class="more">Xem chi tiết</a>
-                            </div>
-                        </li>
-                        <li class="clearfix">
-                            <a href="?page=detail_product" title="" class="thumb fl-left">
-                                <img src="public/images/img-product-04.png" alt="">
-                            </a>
-                            <div class="info fl-right">
-                                <a href="?page=detail_product" title="" class="product-name">Xử thế</a>
-                                <span class="fee">250.000đ</span>
-                                <a href="?page=detail_product" title="" class="more">Xem chi tiết</a>
-                            </div>
-                        </li>
-                        <li class="clearfix">
-                            <a href="?page=detail_product" title="" class="thumb fl-left">
-                                <img src="public/images/img-product-03.png" alt="">
-                            </a>
-                            <div class="info fl-right">
-                                <a href="?page=detail_product" title="" class="product-name">Đầm bầu Mango</a>
-                                <span class="fee">250.000đ</span>
-                                <a href="?page=detail_product" title="" class="more">Xem chi tiết</a>
-                            </div>
-                        </li>
-                        <li class="clearfix">
-                            <a href="?page=detail_product" title="" class="thumb fl-left">
-                                <img src="public/images/img-product-02.png" alt="">
-                            </a>
-                            <div class="info fl-right">
-                                <a href="?page=detail_product" title="" class="product-name">Đầm bầu Mango</a>
-                                <span class="fee">250.000đ</span>
-                                <a href="?page=detail_product" title="" class="more">Xem chi tiết</a>
-                            </div>
-                        </li>
+                        </li><?php } ?>
                     </ul>
                 </div>
             </div>
