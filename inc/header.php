@@ -62,30 +62,8 @@
                             <li>
                                 <a href="?page=detail_news&id=4" title="">Thanh toán</a>
                             </li>
-                            <li>
-                                <a href="?page=detail_news" title="">Liên hệ</a>
-                            </li>
                         </ul>
                         <div id="action-wp" class="fl-right">
-                            <!-- <div id="search-wp" class="fl-left">
-                                <button type="button" class="btn" data-toggle="modal" data-target="#form-search-wp">
-                                    <i class="fa fa-search"></i>
-                                </button>
-                                <div class="modal fade" id="form-search-wp" tabindex="-1" role="dialog" aria-labelledby="lable">
-                                    <div class="modal-dialog" role="document">
-                                        <div class="modal-content">
-                                            <h1 class="title">Nhập từ khóa:</h1>
-                                            <form id="form-s" method="POST" action="">
-                                                <input type="text" name="s" id="s">
-                                                <button type="submit" id="btn-s"><i class="fa fa-search"></i></button>
-                                            </form>
-                                            <div class="thumb">
-                                                <img src="public/images/bg-s.png" alt="">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div> -->
                             <div id="btn-respon" class="fl-right"><i class="fa fa-bars" aria-hidden="true"></i></div>
                             <div id="cart-wp" class="fl-right">
                                 <a href="?page=cart" title="" id="btn-cart">

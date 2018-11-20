@@ -14,7 +14,7 @@ if (file_exists($path)) {
 			}else{
 				echo '<script type="text/javascript">
 		                alert("Vui lòng đăng nhập để sử dụng");
-		                window.location.href="admin/?page=login";
+		                window.location.href="'.$site_url.'?page=login";
 		            </script>';
 			}
 		}
