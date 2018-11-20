@@ -16,6 +16,7 @@
     </div>
     <div id="wrapper" class="wp-inner clearfix">
         <div id="content" class="fl-left">
+            
             <div class="section" id="list-news-wp">
                 <div class="section-detail">
                     <?php 
@@ -41,16 +42,6 @@
                 <?php } ?>
                 </div>
             </div>
-            <div class="section" id="pagination-wp">
-                <div class="wp-inner">
-                    <div class="pagination">
-                        <strong>1</strong>
-                        <a href="" title="">2</a>
-                        <a href="" title>3</a>
-                        <a href="">&gt;</a>                    
-                    </div>
-                </div>
-            </div>
         </div>
         <div id="sidebar" class="fl-right">
             <div class="section" id="category-wp">
@@ -59,30 +50,31 @@
                 </div>
                 <div class="section-detail">
                     <ul class="list-item">
+                        <?php
+                                  // $cat = $_GET['id'];
+                              
+                                  include("config/dbconfig.php");
+                                  $sql = "SELECT * from tbl_category";
+                                  $run = mysqli_query($conn, $sql);
+                                  $i = 0;
+                                  while ($row = mysqli_fetch_array($run)) {
+                                    $i++;
+                                ;?>
                         <li>
-                            <a href="" title="">Thời trang xuân hè</a>
-                        </li>
-                        <li>
-                            <a href="" title="">Thời trang thu đông</a>
-                        </li>
-                        <li>
-                            <a href="" title="">Thời trang xuân hè</a>
-                        </li>
-                        <li>
-                            <a href="" title="">Thời trang thu đông</a>
-                        </li>
+                            <a href="?page=category_product&id=<?php echo $row['id']?>" title=""><?php echo $row['title']?></a>
+                        </li><?php } ?>
                     </ul>
                 </div>
             </div>
             <div class="section" id="list-popular-wp">
                 <div class="section-head">
-                    <h1 class="section-title">Sách bán chạy</h1>
+                    <h1 class="section-title">Sản phẩm mới</h1>
                 </div>
                 <div class="section-detail">
                     <ul class="list-item">
                         <?php 
                             include("config/dbconfig.php");
-                            $sql1 = "SELECT * from tbl_product limit 6";
+                            $sql1 = "SELECT * from tbl_product order by id desc limit 6";
                             $run1 = mysqli_query($conn, $sql1);
                             $i = 0;
                             while ($row1 = mysqli_fetch_array($run1)) {

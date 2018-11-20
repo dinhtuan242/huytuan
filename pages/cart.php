@@ -65,7 +65,7 @@
                             <td><?php echo number_format($row['sale'])?></td>
                             <td>
                                 
-                                <select onchange="numberChanged(this)" style="width: 50px; height: 50px;" class="num-order" data-idproduct="<?php echo $row['id']; ?>">
+                                <select style="width: 50px; height: 50px;" class="num-order" data-idproduct="<?php echo $row['id']; ?>">
                                     <?php 
                                         $i=1;
                                         $soluong = $_SESSION['cart'][$idproduct];
@@ -127,7 +127,7 @@
         <div class="section" id="action-cart-wp">
             <div class="section-detail">
                 <a href="?page=home" title="" id="buy-more">Mua tiếp</a><br/>
-                <a href="?pages=home_delete" title="" id="delete-cart">Xóa giỏ hàng</a>
+                <a href="pages/home_delete.php" title="" id="delete-cart">Xóa giỏ hàng</a>
             </div>
         </div>
         <br>

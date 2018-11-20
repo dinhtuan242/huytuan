@@ -57,7 +57,7 @@
                                 </ul>
                             </li>
                             <li>
-                                <a href="?page=category_news" title="">Xu hướng</a>
+                                <a href="?page=category_news" title="">Bài viết</a>
                             </li>
                             <li>
                                 <a href="?page=detail_news&id=4" title="">Thanh toán</a>

@@ -145,6 +145,7 @@
                                 $sql = "SELECT * from tbl_product where category like '%$id%' order by price asc  limit $trang,8"; 
                             }
                         }
+                        echo $sql;
                         $run = mysqli_query($conn, $sql);
                         $i = 0;
                         while ($row = mysqli_fetch_array($run)) {
@@ -173,7 +174,7 @@
                     <div class="pagination">
                         <?php
             
-            $run_trang = mysqli_query($conn,"select * from tbl_product where category = $id");
+            $run_trang = mysqli_query($conn,$sql);
             $sosanpham = mysqli_num_rows($run_trang);
             $sotrang = ceil($sosanpham/8);
             if ($sotrang == 0){
