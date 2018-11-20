@@ -14,7 +14,7 @@ if($pass_new =='' || $confirm_pass ==''){
 	echo "
 	<script language='javascript'>
 	alert('Vui lòng điền đầy đủ thông tin');
-	window.open('http://localhost:3408/huytuan/admin/?page=change_pass','_self', 1);
+	window.open('".$site_admin."?page=change_pass','_self', 1);
 	</script>
 	";
 }else{
@@ -24,7 +24,7 @@ if($pass_new =='' || $confirm_pass ==''){
 		echo "
 		<script language='javascript'>
 		alert('Tài khoản không tồn tại');
-		window.open('http://localhost:3408/huytuan/admin/?page=change_pass','_self', 1);
+		window.open('".$site_admin."?page=change_pass','_self', 1);
 		</script>
 		";
 	}
@@ -36,7 +36,7 @@ if($pass_new =='' || $confirm_pass ==''){
 			echo "
 		<script language='javascript'>
 		alert('Mật khẩu cũ không đúng');
-		window.open('http://localhost:3408/huytuan/admin/?page=change_pass','_self', 1);
+		window.open('".$site_admin."?page=change_pass','_self', 1);
 		</script>
 		";
 		else
@@ -45,7 +45,7 @@ if($pass_new =='' || $confirm_pass ==''){
 				echo "
 				<script language='javascript'>
 				alert('Mật khẩu không khớp');
-				window.open('http://localhost:3408/huytuan/admin/?page=change_pass','_self', 1);
+				window.open('".$site_admin."?page=change_pass','_self', 1);
 				</script>
 				";
 			}else{
@@ -54,7 +54,7 @@ if($pass_new =='' || $confirm_pass ==''){
 				echo "
 					<script language='javascript'>
 						alert('Đổi mật khẩu thành công!');
-						window.open('http://localhost:3408/huytuan/admin/?page=change_pass','_self', 1);
+						window.open('".$site_admin."?page=change_pass','_self', 1);
 					</script>";
 			}
 

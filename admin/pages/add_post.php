@@ -22,16 +22,6 @@
                         <label>Hình ảnh</label>
                         <div id="uploadFile">
                             <input type="file" name="image" id="upload-thumb">
-                            <!-- <input type="submit" name="btn-upload-thumb" value="Upload" id="btn-upload-thumb">
-                            <img src="public/images/img-thumb.png"> -->
-                        </div>
-                        <!-- <label>Danh mục cha</label>
-                        <select name="parent-Cat">
-                            <option value="">-- Chọn danh mục --</option>
-                            <option value="1">Thể thao</option>
-                            <option value="2">Xã hội</option>
-                            <option value="3">Tài chính</option>
-                        </select> -->
                         <button type="submit" name="btn-submit" id="btn-submit">Thêm mới</button>
                     </form>
                 </div>

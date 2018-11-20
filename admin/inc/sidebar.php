@@ -59,23 +59,6 @@
                 </li>
             </ul>
         </li>
-        <!-- <li class="nav-item">
-            <a href="#" title="" class="nav-link nav-toggle">
-                <span class="fa fa-cubes icon"></span>
-                <span class="title">Khối giao diện</span>
-            </a>
-            <ul class="sub-menu">
-                <li class="nav-item">
-                    <a href="#" title="" class="nav-link">Thêm mới</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#" title="" class="nav-link">Danh sách khối</a>
-                </li>
-                <li class="nav-item">
-                    <a href="?page=menu" title="" class="nav-link">Menu</a>
-                </li>
-            </ul>
-        </li> -->
         <li class="nav-item">
             <a href="" title="" class="nav-link nav-toggle">
                 <span class="fa fa-map icon"></span>

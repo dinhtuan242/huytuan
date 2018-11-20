@@ -12,7 +12,7 @@
 		echo '
 			<script type="text/javascript">
 				alert("Vui lòng điền đầy đủ thông tin!!!");
-				window.location.href="/admin/?page=add_banner";
+				window.location.href="'.$site_admin.'?page=add_banner";
 			</script>';
 	}else{
 		$sql="insert into tbl_banner (title,image,active) value('$title','$image','$active')";
@@ -22,7 +22,7 @@
 		echo '
 			<script type="text/javascript">
 				alert("Thêm mới banner thành công!!!");
-				window.location.href="/admin/?page=list_banner";
+				window.location.href="'.$site_admin.'?page=list_banner";
 			</script>';
 	}
 ;?>

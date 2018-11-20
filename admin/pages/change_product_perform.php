@@ -23,7 +23,7 @@
 		echo '
 		<script type="text/javascript">
 			alert("Sửa bài viết lỗi. Vui lòng điền đầy đủ thông tin!!!");
-			window.location.href="http://localhost:3408/huytuan/admin/?page=change_product&id=$id";
+			window.location.href="'.$site_admin.'?page=change_product&id=$id";
 		</script>';
 	} else {
 		if($image==NULL) {		
@@ -37,6 +37,6 @@
 	echo '
 		<script type="text/javascript">
 			alert("Sửa sản phẩm thành công!!!");
-			window.location.href="http://localhost:3408/huytuan/admin/?page=list_product";
+			window.location.href="'.$site_admin.'?page=list_product";
 		</script>';
 ;?>

@@ -17,7 +17,7 @@
 		echo '
 		<script type="text/javascript">
 			alert("Sửa bài viết lỗi. Vui lòng điền đầy đủ thông tin!!!");
-			window.location.href="http://localhost:3408/huytuan/admin/?page=change_banner&id=$id";
+			window.location.href="'.$site_admin.'page=change_banner&id=$id";
 		</script>';
 	} else {
 		if($image==NULL) {		
@@ -31,6 +31,6 @@
 	echo '
 		<script type="text/javascript">
 			alert("Sửa banner thành công!!!");
-			window.location.href="http://localhost:3408/huytuan/admin/?page=list_banner";
+			window.location.href="'.$site_admin.'?page=list_banner";
 		</script>';
 ;?>

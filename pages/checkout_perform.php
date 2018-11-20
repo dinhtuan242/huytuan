@@ -26,7 +26,7 @@
         session_destroy();
         echo '<script type="text/javascript">
                 alert("Mua hàng thành công");
-                window.location.href="http://localhost:3408/huytuan/?page=home";
+                window.location.href="'.$site_url.'?page=home";
             </script>';
     }
  ?>

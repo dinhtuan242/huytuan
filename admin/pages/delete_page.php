@@ -15,6 +15,6 @@
 	echo '
 		<script type="text/javascript">
 			alert("Xóa trang thành công!!!");
-			window.location.href="http://localhost:3408/huytuan/admin/?page=list_page";
+			window.location.href="'.$site_admin.'?page=list_page";
 		</script>';
 ;?>

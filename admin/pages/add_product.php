@@ -49,12 +49,6 @@
                                 }
                                 ;?>
                         </select>
-                        <!-- <label>Trạng thái</label>
-                        <select name="status">
-                            <option value="0">-- Chọn danh mục --</option>
-                            <option value="1">Chờ duyệt</option>
-                            <option value="2">Đã đăng</option>
-                        </select> -->
                         <button type="submit" name="btn-submit" id="btn-submit">Thêm mới</button>
                     </form>
                 </div>
