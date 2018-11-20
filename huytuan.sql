@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.3
+-- version 4.7.9
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 19, 2018 at 08:11 AM
--- Server version: 10.1.35-MariaDB
--- PHP Version: 7.2.9
+-- Generation Time: Nov 20, 2018 at 10:49 AM
+-- Server version: 10.1.31-MariaDB
+-- PHP Version: 7.2.3
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -30,10 +30,10 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `tbl_banner` (
   `id` int(11) NOT NULL,
-  `title` varchar(100) COLLATE utf8mb4_vietnamese_ci NOT NULL,
-  `image` varchar(100) COLLATE utf8mb4_vietnamese_ci NOT NULL,
+  `title` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+  `image` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
   `active` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_vietnamese_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Dumping data for table `tbl_banner`
@@ -41,9 +41,9 @@ CREATE TABLE `tbl_banner` (
 
 INSERT INTO `tbl_banner` (`id`, `title`, `image`, `active`) VALUES
 (6, 'Banner 1', '01_Preview5.jpg', 1),
-(7, 'Banner 2', 'sl3.jpg', 1),
+(7, 'Banner 2', 'sl3.jpg', 0),
 (8, 'Banner 3', 'slideshow_2.jpg', 1),
-(9, 'Banner 4', 'slideshow_3.jpg', 1);
+(9, 'Đăng ký thành viên', 'slideshow_3.jpg', 1);
 
 -- --------------------------------------------------------
 
@@ -53,8 +53,8 @@ INSERT INTO `tbl_banner` (`id`, `title`, `image`, `active`) VALUES
 
 CREATE TABLE `tbl_category` (
   `id` int(11) NOT NULL,
-  `title` varchar(100) CHARACTER SET utf8 COLLATE utf8_vietnamese_ci NOT NULL,
-  `content` text CHARACTER SET utf8 COLLATE utf8_vietnamese_ci NOT NULL
+  `title` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+  `content` text COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
@@ -87,15 +87,15 @@ CREATE TABLE `tbl_comment` (
 
 CREATE TABLE `tbl_oder` (
   `id` int(11) UNSIGNED NOT NULL,
-  `diachi` varchar(200) COLLATE utf8_vietnamese_ci NOT NULL,
+  `diachi` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
   `tongtien` float NOT NULL,
-  `tenkhachhang` varchar(50) COLLATE utf8_vietnamese_ci NOT NULL,
-  `email` varchar(20) COLLATE utf8_vietnamese_ci NOT NULL,
-  `phone` varchar(10) COLLATE utf8_vietnamese_ci NOT NULL,
-  `note` varchar(500) COLLATE utf8_vietnamese_ci DEFAULT NULL,
-  `hinhthuc` varchar(100) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `tinhtrang` varchar(100) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_vietnamese_ci;
+  `tenkhachhang` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `email` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
+  `phone` varchar(10) COLLATE utf8_unicode_ci NOT NULL,
+  `note` varchar(500) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `hinhthuc` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+  `tinhtrang` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Dumping data for table `tbl_oder`
@@ -149,9 +149,9 @@ INSERT INTO `tbl_oder_detail` (`maOder`, `idproduct`, `soluong`) VALUES
 
 CREATE TABLE `tbl_page` (
   `id` int(11) NOT NULL,
-  `title` varchar(100) CHARACTER SET utf8 COLLATE utf8_vietnamese_ci DEFAULT NULL,
-  `content` text CHARACTER SET utf8 COLLATE utf8_vietnamese_ci,
-  `image` varchar(100) CHARACTER SET utf8 COLLATE utf8_vietnamese_ci DEFAULT NULL
+  `title` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `content` text COLLATE utf8_unicode_ci,
+  `image` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
@@ -169,11 +169,11 @@ INSERT INTO `tbl_page` (`id`, `title`, `content`, `image`) VALUES
 
 CREATE TABLE `tbl_post` (
   `id` int(11) NOT NULL,
-  `title` varchar(100) COLLATE utf8_vietnamese_ci DEFAULT NULL,
-  `content` text COLLATE utf8_vietnamese_ci,
-  `image` varchar(100) COLLATE utf8_vietnamese_ci DEFAULT NULL,
-  `mota` text COLLATE utf8_vietnamese_ci
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_vietnamese_ci;
+  `title` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `content` text COLLATE utf8_unicode_ci,
+  `image` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `mota` text COLLATE utf8_unicode_ci
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Dumping data for table `tbl_post`
@@ -191,15 +191,15 @@ INSERT INTO `tbl_post` (`id`, `title`, `content`, `image`, `mota`) VALUES
 
 CREATE TABLE `tbl_product` (
   `id` int(11) NOT NULL,
-  `name` varchar(100) COLLATE utf8_vietnamese_ci NOT NULL,
-  `masp` varchar(50) COLLATE utf8_vietnamese_ci NOT NULL,
-  `price` float NOT NULL,
-  `image` varchar(100) COLLATE utf8_vietnamese_ci NOT NULL,
-  `category` varchar(100) COLLATE utf8_vietnamese_ci NOT NULL,
-  `chitiet` text COLLATE utf8_vietnamese_ci NOT NULL,
-  `sale` float DEFAULT NULL,
-  `mota` varchar(500) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_vietnamese_ci;
+  `name` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+  `masp` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `price` int(11) NOT NULL,
+  `image` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+  `category` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+  `chitiet` text COLLATE utf8_unicode_ci NOT NULL,
+  `sale` int(11) DEFAULT NULL,
+  `mota` varchar(500) COLLATE utf8_unicode_ci DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Dumping data for table `tbl_product`
@@ -234,7 +234,7 @@ INSERT INTO `tbl_product` (`id`, `name`, `masp`, `price`, `image`, `category`, `
 (46, 'ÁO THUN SỌC CÓ CỔ XANH BIỂN AT635', ' AT635', 245000, 'ao-thun-co-co-xanh-bien-at635-8128-slide-1.jpg', '9', '<p>Với những tính năng đặc biệt dưới đây, mẫu Áo thun cá tính này sẽ chinh phục bất kỳ chàng trai nào khi được cầm nó trên tay.&nbsp;<br />\r\n<br />\r\n- Màu xanh biển tươi sáng, thu hút ánh nhìn<br />\r\n- Chất liệu từ thun 100% cotton co giãn 4 chiều.<br />\r\n- Mềm mịn, mát lạnh, thấm hút mồ hôi tốt, cho bạn thoải mái vận động cả ngày dài.<br />\r\n- Tay áo dáng ngắn, bo nhẹ với thun màu nổi bật<br />\r\n- Thiết kế cổ áo bẻ ve nhỏ thanh nhã phối hàng nút cài.<br />\r\n- Đường may đều đẹp, tỉ mỉ<br />\r\n- Form ôm body khoe vẻ đẹp hình thể hoàn hảo<br />\r\n- Nhiều size cho bạn thoải mái lựa chọn</p>\r\n\r\n<p><br />\r\n<img alt=\"Áo thun sọc có cổ xanh biển at635 - 1\" src=\"https://4menshop.com/images/thumbs/2016/11/ao-thun-co-co-xanh-bien-at635-8128-slide-1.jpg\" /></p>\r\n\r\n<p><br />\r\n<img alt=\"Áo thun sọc có cổ xanh biển at635 - 2\" src=\"https://4menshop.com/images/thumbs/2016/11/ao-thun-co-co-xanh-bien-at635-8128-slide-2.jpg\" /><br />\r\n<br />\r\n<img alt=\"Áo thun sọc có cổ xanh biển at635 - 3\" src=\"https://4menshop.com/images/thumbs/2016/11/ao-thun-co-co-xanh-bien-at635-8128-slide-4.jpg\" /><br />\r\n<br />\r\n<img alt=\"Áo thun sọc có cổ xanh biển at635 - 4\" src=\"https://4menshop.com/images/thumbs/2016/11/ao-thun-co-co-xanh-bien-at635-8128-slide-3.jpg\" /></p>\r\n', 220000, 'Áo Thun Sọc Có Cổ Xanh Biển AT635 bắt mắt với màu xanh biển tươi sáng, chất liệu vải thun cotton co giãn 4 chiều, mang đến cảm giác mềm mịn, mát lạnh khi mặc. Sản phẩm tạo điểm nhấn với những đường sọc ngang màu trắng bắt mắt. Tay áo dáng ngắn, cổ bẻ phối hàng nút cài tinh tế, đẹp mắt.'),
 (47, 'ÁO THUN ĐỎ AT719', 'AT719', 195000, 'ao-thun-xanh-den-at719-9379-slide-products-5a225564a8b57.jpg', '9', '<p><strong>Thông tin chi tiết: Áo Thun Đỏ AT719</strong><br />\r\n<br />\r\n<strong>- Mã sản phẩm:</strong>&nbsp;AT719-DO<br />\r\n<br />\r\n<strong>- Màu sắc:&nbsp;</strong>Đỏ<br />\r\n<br />\r\n<strong>- Chất liệu:</strong>&nbsp;Thun cotton co giãn 4 chiều<br />\r\n<br />\r\n<strong>- Kiểu dáng:</strong>&nbsp;Áo thun cổ bẻ<br />\r\n<br />\r\n<strong>- Thích hợp:</strong>&nbsp;đi làm, đi học, đi chơi, du lịch, tiệc nhẹ...</p>\r\n', 170000, 'Áo Thun Đỏ AT719 chất liệu thun cotton co giãn 4 chiều thấm hút tốt, mềm mại, bền màu, thoáng khí. Kiểu dáng áo thun có cổ bẻ phối nút lịch sự, tay ngắn thoải mái vận động. Màu sắc dễ phối trang phục, phù hợp khi đi làm, đi học, đi chơi...'),
 (48, 'ÁO THUN CÓ CỔ XANH LÁ CÂY AT781', 'AT781', 275000, 'ao-thun-co-co-xanh-den-at781-9919-slide-products-5b65756bb97a1.jpg', '9', '<p><strong>Thông tin chi tiết: Áo Thun Có Cổ Xanh Lá Cây AT781</strong><br />\r\n<br />\r\n<strong>- Mã sản phẩm:</strong>&nbsp;AT781-XLC<br />\r\n<br />\r\n<strong>- Màu sắc: Xanh Lá Cây</strong><br />\r\n<br />\r\n<strong>- Chất liệu:</strong>&nbsp;Thun cotton co giãn 4 chiều<br />\r\n<br />\r\n<strong>- Kiểu dáng:</strong>&nbsp;Áo thun cổ bẻ<br />\r\n<br />\r\n<strong>- Thích hợp:</strong>&nbsp;đi làm, đi học, đi chơi, du lịch...</p>\r\n\r\n<p><img alt=\"Áo thun có cổ xanh lá cây at781 - 1\" src=\"https://4menshop.com/images/thumbs/2018/08/ao-thun-co-co-xanh-den-at781-9919-slide-products-5b65756bb97a1.jpg\" /><br />\r\n<img alt=\"Áo thun có cổ xanh lá cây at781 - 2\" src=\"https://4menshop.com/images/thumbs/2018/08/ao-thun-co-co-xanh-den-at781-9919-slide-products-5b65756c3a94b.jpg\" /><br />\r\n<img alt=\"Áo thun có cổ xanh lá cây at781 - 3\" src=\"https://4menshop.com/images/thumbs/2018/08/ao-thun-co-co-xanh-den-at781-9919-slide-products-5b65756c6c9ce.jpg\" /><br />\r\n<img alt=\"Áo thun có cổ xanh lá cây at781 - 4\" src=\"https://4menshop.com/images/thumbs/2018/08/ao-thun-co-co-xanh-den-at781-9919-slide-products-5b65756cadb1d.jpg\" /></p>\r\n', 25000, 'Áo Thun Có Cổ Xanh Lá Cây AT781 được may từ chất liệu thun cotton cao cấp, co giãn 4 chiều thấm hút tốt, mềm mại, bền màu, thoáng mát. Kiểu dáng áo thun có cổ bẻ nhỏ thanh lịch, tay ngắn, logo thêu ngực rất thể thao và năng động.'),
-(49, 'ÁO SƠ MI NAZAFU XÁM 980', ' 980', 445000, 'ao-so-mi-nazafu-soc-xanh-la-cay-979-10124-slide-products-5bc44f08b834e.jpg', '8', '<p><strong>hông tin chi tiết:&nbsp;</strong><strong>Áo Sơ Mi NAZAFU Xám 980</strong><br />\r\n<br />\r\n<strong>- Mã sản phẩm:</strong>&nbsp;ASM980-XAM<br />\r\n<br />\r\n<strong>- Màu sắc:</strong>&nbsp;Xám<br />\r\n<br />\r\n<strong>- Chất liệu:&nbsp;</strong>Vải ngoại nhập Hàn Quốc<br />\r\n<br />\r\n<strong>- Thích hợp:</strong>&nbsp;Phù hợp môi trường công sở, mặc đi làm, đi học, dự tiệc nhẹ, hẹn hò</p>\r\n\r\n<p><br />\r\n<img alt=\"Áo sơ mi nazafu xám 980 - 1\" src=\"https://4menshop.com/images/thumbs/2018/10/ao-so-mi-nazafu-soc-xanh-la-cay-979-10124-slide-products-5bc44f08ee89e.jpg\" /></p>\r\n', 420000, 'Áo Sơ Mi NAZAFU Xám 980 chất liệu vải cao cấp mềm mại, rất thoáng mát, chống nhăn nhàu hiệu quả. Kiểu dáng hiện đại, sang trọng, form áo chuẩn tôn dáng. Nút vuông quyền lực, mạnh mẽ, khắc logo NAZAFU.');
+(49, 'ÁO SƠ MI NAZAFU XÁM 980', ' 980', 445000, 'ao-so-mi-nazafu-soc-xanh-la-cay-979-10124-slide-products-5bc44f08b834e.jpg', '7', '<p><strong>hông tin chi tiết:&nbsp;</strong><strong>Áo Sơ Mi NAZAFU Xám 980</strong><br />\r\n<br />\r\n<strong>- Mã sản phẩm:</strong>&nbsp;ASM980-XAM<br />\r\n<br />\r\n<strong>- Màu sắc:</strong>&nbsp;Xám<br />\r\n<br />\r\n<strong>- Chất liệu:&nbsp;</strong>Vải ngoại nhập Hàn Quốc<br />\r\n<br />\r\n<strong>- Thích hợp:</strong>&nbsp;Phù hợp môi trường công sở, mặc đi làm, đi học, dự tiệc nhẹ, hẹn hò</p>\r\n\r\n<p><br />\r\n<img alt=\"Áo sơ mi nazafu xám 980 - 1\" src=\"https://4menshop.com/images/thumbs/2018/10/ao-so-mi-nazafu-soc-xanh-la-cay-979-10124-slide-products-5bc44f08ee89e.jpg\" /></p>\r\n', 420000, 'Áo Sơ Mi NAZAFU Xám 980 chất liệu vải cao cấp mềm mại, rất thoáng mát, chống nhăn nhàu hiệu quả. Kiểu dáng hiện đại, sang trọng, form áo chuẩn tôn dáng. Nút vuông quyền lực, mạnh mẽ, khắc logo NAZAFU.');
 
 -- --------------------------------------------------------
 
@@ -243,12 +243,12 @@ INSERT INTO `tbl_product` (`id`, `name`, `masp`, `price`, `image`, `category`, `
 --
 
 CREATE TABLE `tbl_user` (
-  `username` varchar(30) CHARACTER SET utf8 COLLATE utf8_vietnamese_ci NOT NULL,
+  `username` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
   `name` char(50) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `email` varchar(200) CHARACTER SET utf8 COLLATE utf8_vietnamese_ci DEFAULT NULL,
-  `phone` varchar(10) CHARACTER SET utf8 COLLATE utf8_vietnamese_ci DEFAULT NULL,
-  `address` varchar(200) CHARACTER SET utf8 COLLATE utf8_vietnamese_ci DEFAULT NULL,
-  `password` varchar(10) CHARACTER SET utf8 COLLATE utf8_vietnamese_ci NOT NULL
+  `email` varchar(200) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `phone` varchar(10) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `address` varchar(200) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `password` varchar(10) COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
@@ -256,7 +256,8 @@ CREATE TABLE `tbl_user` (
 --
 
 INSERT INTO `tbl_user` (`username`, `name`, `email`, `phone`, `address`, `password`) VALUES
-('dinhtuan242', 'Vũ Đình Tuân', 'vudinhtuan242@gmail.com', '0358850515', 'Hà Nội', '123456');
+('dinhtuan242', 'Vũ Đình Tuân', 'vudinhtuan242@gmail.com', '0358850515', 'Hà Nội', '123456'),
+('namhuy', 'Đỗ Nam Huy', 'namhuy@gmail.com', '033565656', 'Hà Nội', 'namhuy');
 
 --
 -- Indexes for dumped tables
@@ -330,7 +331,7 @@ ALTER TABLE `tbl_category`
 -- AUTO_INCREMENT for table `tbl_comment`
 --
 ALTER TABLE `tbl_comment`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `tbl_page`
