@@ -27,6 +27,6 @@
 	echo '
 		<script type="text/javascript">
 			alert("Thêm mới sản phẩm thành công!!!");
-			window.location.href="http://localhost:3408/huytuan/admin/?page=list_product";
+			window.location.href="'.$site_admin.'?page=list_product";
 		</script>';
 ;?>

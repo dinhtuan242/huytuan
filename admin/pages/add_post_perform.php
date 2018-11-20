@@ -23,6 +23,6 @@
 	echo '
 		<script type="text/javascript">
 			alert("Thêm mới bài viết thành công!!!");
-			window.location.href="http://localhost:3408/huytuan/admin/?page=list_post";
+			window.location.href="'.$site_admin.'?page=list_post";
 		</script>';
 ;?>

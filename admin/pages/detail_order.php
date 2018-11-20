@@ -1,7 +1,7 @@
 <?php 
+        include("../config/dbconfig.php");
     $tongsoluong=0;
     if (isset($_POST['sm_status'])) {
-        include("../config/dbconfig.php");
         $tinhtrang = $_POST['status'];
         $id = $_GET['id'];
         $sql = "UPDATE tbl_oder SET tinhtrang = '$tinhtrang' WHERE id = '$id'";

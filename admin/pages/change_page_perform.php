@@ -16,7 +16,7 @@
 		echo '
 		<script type="text/javascript">
 			alert("Sửa trang lỗi. Vui lòng điền đầy đủ thông tin!!!");
-			window.location.href="http://localhost:3408/huytuan/admin/?page=change_page&id=$id";
+			window.location.href="'.$site_admin.'?page=change_page&id=$id";
 		</script>';
 	} else {
 		if($image==NULL) {		
@@ -30,6 +30,6 @@
 	echo '
 		<script type="text/javascript">
 			alert("Sửa trang thành công!!!");
-			window.location.href="http://localhost:3408/huytuan/admin/?page=list_page";
+			window.location.href="'.$site_admin.'?page=list_page";
 		</script>';
 ;?>

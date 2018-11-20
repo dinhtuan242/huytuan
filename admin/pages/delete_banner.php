@@ -14,6 +14,6 @@
 	echo '
 		<script type="text/javascript">
 			alert("Xóa banner thành công!!!");
-			window.location.href="http://localhost:3408/huytuan/admin/?page=list_banner";
+			window.location.href="'.$site_admin.'?page=list_banner";
 		</script>';
 ;?>
