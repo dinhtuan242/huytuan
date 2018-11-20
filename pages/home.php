@@ -89,7 +89,7 @@
                 <ul class="list-item clearfix">
                     <?php
                     include("config/dbconfig.php");
-                    $sql = "SELECT * from tbl_product where category = '$category' order by id asc limit 8";
+                    $sql = "SELECT * from tbl_product where category = '$category' and soluong > 0 order by id asc limit 8";
                     $run = mysqli_query($conn, $sql);
                     $i = 0;
                     while ($row = mysqli_fetch_array($run)) {

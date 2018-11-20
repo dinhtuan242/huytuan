@@ -13,7 +13,16 @@
                     <div class="filter-wp clearfix">
                         <ul class="post-status fl-left">
                             <li class="all">Tất cả <span class="count">(
-                                <?php echo mysqli_num_rows(mysqli_query($conn, "select * from tbl_product")); ?>
+                                <b style="color: #4fa327"><?php echo mysqli_num_rows(mysqli_query($conn, "select * from tbl_product")); ?></b>
+                            )</span> mặt hàng
+                            <li class="all"> | <span class="count">(<b style="color: #4fa327">
+                                <?php 
+                                    $tongsoluong = 0;
+                                    $run0=mysqli_query($conn, "SELECT SUM(soluong) as tongsoluong FROM tbl_product");
+                                    $i = 0;
+                                    while ($row0 = mysqli_fetch_array($run0)) {
+                                  $i++; $tongsoluong += $row0['tongsoluong'];}echo $tongsoluong;
+                                ?></b>
                             )</span> sản phẩm
                         </ul>
                         <form method="POST" action="" class="form-s fl-right">
@@ -40,10 +49,10 @@
                     <div class="table-responsive">
                         <table class="table list-table-wp">
                             <thead>
-                                <tr>
+                                <tr style="color: #6603ff">
                                     <td><span class="thead-text">STT</span></td>
                                     <td><span class="thead-text">ID</span></td>
-                                    <td><span class="thead-text">Mã sản phẩm</span></td>
+                                    <td><span class="thead-text">Số lượng</span></td>
                                     <td><span class="thead-text">Hình ảnh</span></td>
                                     <td><span class="thead-text">Tên sản phẩm</span></td>
                                     <td><span class="thead-text">Giá</span></td>
@@ -62,10 +71,10 @@
                                 if (isset($_POST['s'])) {
                                     if ($_POST['s'] != '') {
                                     $s = $_POST['s'];
-                                        $sql = "SELECT * from tbl_product where id like '%$s%' or name LIKE '%$s%' order by id desc limit $trang,8";
+                                        $sql = "SELECT * from tbl_product where id like '%$s%' or name LIKE '%$s%' order by soluong asc limit $trang,8";
                                     }
                                     }else{
-                                        $sql = "SELECT * from tbl_product order by id desc limit $trang,8"; 
+                                        $sql = "SELECT * from tbl_product order by soluong asc limit $trang,8"; 
                                     }
                                    $run = mysqli_query($conn,$sql);
                                    $i = 0; 
@@ -76,7 +85,7 @@
                                 <tr>
                                     <th scope="row"><?php echo $i;?></th>
                                     <td><span class="tbody-text"><?php echo $row["id"];?></h3></span>
-                                    <td><span class="tbody-text"><?php echo $row["masp"];?></h3></span>
+                                    <td><span class="tbody-text"><?php echo $row["soluong"];?></h3></span>
                                     <td>
                                         <div class="tbody-thumb">
                                             <img src="index.php/../../images/product/<?php echo $row['image']?>" alt="">
@@ -84,7 +93,7 @@
                                     </td>
                                     <td class="clearfix">
                                         <div class="tb-title fl-left">
-                                            <a href="" title=""><?php echo $row["name"];?></a>
+                                            <a style="color: red;" href="" title=""><?php echo $row["name"];?></a>
                                         </div>
                                         
                                        <ul class="list-operation fl-right">
@@ -131,7 +140,7 @@
                             <a href="" title=""><</a>
                         </li>
                         <?php
-                            $sql_trang = "select * from tbl_product";
+                            $sql_trang = "select * from tbl_product order by soluong asc";
                             $run_trang = mysqli_query($conn,$sql_trang);
                             $sosanpham = mysqli_num_rows($run_trang);
                             $sotrang = ceil($sosanpham/8);

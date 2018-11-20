@@ -26,7 +26,8 @@
 .detail-exhibition .section .list-item li:nth-child(1) .title:before{content: '\f02a';}
 .detail-exhibition .section .list-item li:nth-child(2) .title:before{content: '\f041';}
 .detail-exhibition .section .list-item li:nth-child(3) .title:before{content: '\f23d';}
-.detail-exhibition .section .list-item li:nth-child(4) .title:before{ content: '\f1fe';}
+.detail-exhibition .section .list-item li:nth-child(4) .title:before{content: '\f1fe';}
+.detail-exhibition .section .list-item li:nth-child(5) .title:before{content: '\f14b';}
 .detail-exhibition .section .section-title{
     padding: 0;
     line-height: inherit;
