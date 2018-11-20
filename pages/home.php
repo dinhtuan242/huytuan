@@ -83,6 +83,7 @@
         <div class="wp-inner">
             <div class="section-head clearfix">
             <h3 class="section-title fl-left"><?php echo $rowcat['title']?></h3>
+            <a href="?page=category_product&id=<?php echo $category?>" title="" class="see-more fl-right">Xem thêm</a>
             </div>
             <div class="section-detail">
                 <ul class="list-item clearfix">
