@@ -55,11 +55,11 @@
                         while ($row1 = mysqli_fetch_array($run1)) {
                             if ($row['category'] == $row1['id']) {
                         ;?>
-                     <option value="<?php echo $row["id"];?>" selected><?php echo $row1["title"];?></option>
+                           <option value="<?php echo $row["id"];?>" selected><?php echo $row1["title"];?></option>
                      <?php
                         }else{
                         ?>
-                     <option value="<?php echo $row["id"];?>"><?php echo $row1["title"];?></option>
+                           <option value="<?php echo $row["id"];?>"><?php echo $row1["title"];?></option>
                      <?php
                         }}
                         ;?>

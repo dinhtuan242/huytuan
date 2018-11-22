@@ -29,22 +29,20 @@
                                     <td><span class="thead-text">Mô tả</span></td>
                                 </tr>
                                 <?php
-            if(isset($_GET['trang'])){
-                $get_trang = $_GET['trang'];
-            }
-            else{
-                $get_trang = '';
-            }
-            if ($get_trang == '' || $get_trang == 1){
-                $trang = 0;
-            }
-            else
-            {
-                $trang = ($get_trang*8)-8;
-            }
-
-
-            ?>
+                                    if(isset($_GET['trang'])){
+                                        $get_trang = $_GET['trang'];
+                                    }
+                                    else{
+                                        $get_trang = '';
+                                    }
+                                    if ($get_trang == '' || $get_trang == 1){
+                                        $trang = 0;
+                                    }
+                                    else
+                                    {
+                                        $trang = ($get_trang*8)-8;
+                                    }
+                                ?>
                             </thead>
                             <tbody>
                                <?php

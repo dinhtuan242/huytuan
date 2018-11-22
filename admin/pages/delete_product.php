@@ -1,10 +1,6 @@
 <?php
 
-// Lấy id từ trên đường dẫn
 $id = $_GET['id'];
-
-// Xóa bài viết có id trong bảng
-// Kết nối đến CSDL 
 include("../config/dbconfig.php");
 // Xóa dữ liệu trong bảng		
 $sql  = "DELETE from tbl_product where id = " . $id;

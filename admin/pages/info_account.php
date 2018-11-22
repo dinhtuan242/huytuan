@@ -21,11 +21,10 @@
             <div class="section-detail">
                <form method="POST" action="?page=change_pass">
                   <?php
-                     // Bước 1: Kết nối đến CSDL
+                      $email = $_SESSION['email'];
                       include("../config/dbconfig.php");
                       mysqli_set_charset($conn, 'UTF8');
-                     //Bước 2: Hiển thị các dữ liệu trong bảng ra đây
-                      $sql = "SELECT * from tbl_user";
+                      $sql = "SELECT * from tbl_user where email = '$email'";
                       $run = mysqli_query($conn, $sql);
                       $i = 0;
                       while ($row = mysqli_fetch_array($run)) {

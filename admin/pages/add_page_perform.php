@@ -15,7 +15,7 @@ if (!$result) {
 
 $sql = "insert into tbl_page (title,content,image) value('$title','$content','$image')";
 
-// $run = mysqli_query($conn, $sql);
+$run = mysqli_query($conn, $sql);
 echo '
 		<script type="text/javascript">
 			alert("Thêm mới trang thành công!!!");

@@ -16,12 +16,22 @@
             </li>
          </ul>
       </div>
+                     <?php
+                      $email = $_SESSION['email'];
+                      include("../config/dbconfig.php");
+                      mysqli_set_charset($conn, 'UTF8');
+                      $sql = "SELECT * from tbl_user where email = '$email'";
+                      $run = mysqli_query($conn, $sql);
+                      $i = 0;
+                      while ($row = mysqli_fetch_array($run)) {
+                       $i++;
+                     ;?>
       <div id="content" class="fl-right">
          <div class="section" id="detail-page">
             <div class="section-detail">
                <form method="POST" action="pages/change_pass_perform.php">
                   <label for="old-pass">Email</label>
-                  <input type="text" name="email" id="email" style="display: block;padding: 5px 10px;border: 1px solid #ddd;width: 35%;margin-bottom: 15px;">
+                  <input type="text" name="email" id="email" style="display: block;padding: 5px 10px;border: 1px solid #ddd;width: 35%;margin-bottom: 15px;" value="<?php echo $row["email"];?>" readonly><?php } ?>
                   <label for="old-pass">Mật khẩu cũ</label>
                   <input type="password" name="pass_old" id="pass-old">
                   <label for="new-pass">Mật khẩu mới</label>
