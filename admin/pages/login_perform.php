@@ -5,7 +5,7 @@ session_start();
 include('../../config/dbconfig.php');
 
 $email = $_POST['email'];
-$password = $_POST['password'];
+$password = md5($_POST['password']);
 $sql_check = mysqli_query($conn,"select * from tbl_user where email = '$email'");
 $dem = mysqli_num_rows($sql_check);
 if($dem == 0)

@@ -5,9 +5,9 @@ session_start();
 include('../../config/dbconfig.php');
 
 $email        = $_POST['email'];
-$pass_old     = $_POST['pass_old'];
-$pass_new     = $_POST['pass_new'];
-$confirm_pass = $_POST['confirm_pass'];
+$pass_old     = md5($_POST['pass_old']);
+$pass_new     = md5($_POST['pass_new']);
+$confirm_pass = md5($_POST['confirm_pass']);
 $sql_check    = mysqli_query($conn, "select * from tbl_user where email = '$email'");
 $dem          = mysqli_num_rows($sql_check);
 if ($pass_new == '' || $confirm_pass == '') {

@@ -40,7 +40,7 @@
                 </div>
             </div>
             <div class="block" id="top-selling">
-                <h3 class="title">Top bán chạy</h3>
+                <h3 class="title">Danh mục hot</h3>
                 <div class="detail">
                     <ul class="list-item">
                          <?php

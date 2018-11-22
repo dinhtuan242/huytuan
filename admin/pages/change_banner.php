@@ -35,13 +35,11 @@
                   <label for="price">Thực Hiện</label>
                   <select name="active" id="active">
                 <?php
-                    $act = "Không";
                     for ($i = 0; $i <= 1; $i++) {
-                        if($row["active"] == 1) $act = "Có";
                         if ($i == $row["active"]) {
-                            echo "<option value='$i' selected='selected'>$act</option>";
+                            echo "<option value='$i' selected='selected'>$i</option>";
                         } else {
-                            echo "<option value='$i'>$act</option>";
+                            echo "<option value='$i'>$i</option>";
                         }
                     }
                 ?>

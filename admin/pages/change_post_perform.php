@@ -1,8 +1,4 @@
 <?php
-// Lấy các dữ liệu bên trang sửa danh mục
-
-// Chàn dữ liệu vào bảng tbl_category
-// Bước 1: Kết nối đến CSDL 
 include("../../config/dbconfig.php");
 $id         = $_POST['id'];
 $title      = $_POST['title'];
